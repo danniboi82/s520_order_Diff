@@ -1,0 +1,21 @@
+{
+  "name": "sales_diff_page",
+  "version": "1.0.0",
+  "description": "test run for dealer portal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DanO",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.1.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2",
+    "tedious": "^3.0.1"
+  }
+}
