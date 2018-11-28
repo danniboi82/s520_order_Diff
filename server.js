@@ -36,7 +36,7 @@ app.get('/search', (req, res) => {
     query = query + "'" + "" + "'"
     
     
-    db.sequelize.query(query).then(Diff => res.json(Diff[1][0].SALES_DOC));
+    db.sequelize.query(query).then(Diff => res.render('index', {Diff : Diff[0][1]}));
     // db.sequelize.query(query).then(Diff => res.json(Diff[1][0].SALES_DOC));
 
 });
