@@ -1,52 +1,57 @@
 <% include ./partials/header %>
-<h4> Return Results : <%= table.length %> </h4>
 <table style="margin: 50px auto">
-    <tr>
-        <th>ID</th>
-        <th>Sales_Doc</th>
-        <th>Material</th>
-        <th>S520_ORDER_QTY</th>
-        <th>S520_CONFIRM_QTY</th>
-        <th>OR_Order_Qty</th>
-        <th>OR_Confirm_Qty</th>
-        <th>Order_Diff</th>
-        <th>Confirm_Diff</th>
+    <caption> Return Results :
+        <%= table.length %>
+    </caption>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Sales_Doc</th>
+            <th>Material</th>
+            <th>S520_ORDER_QTY</th>
+            <th>S520_CONFIRM_QTY</th>
+            <th>OR_Order_Qty</th>
+            <th>OR_Confirm_Qty</th>
+            <th>Order_Diff</th>
+            <th>Confirm_Diff</th>
 
-    </tr>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i = 0; i < table.length; i++){ %>
+        <tr>
 
-<% for(var i = 0; i < table.length; i++){ %>
-    <tr>
+            <td>
+                <%= i + 1 %>
+            </td>
+            <td>
+                <%= table[i].SALES_DOC %>
+            </td>
+            <td>
+                <%= table[i].MATERIAL %>
+            </td>
+            <td>
+                <%= table[i].S520_ORQTY %>
+            </td>
+            <td>
+                <%= table[i].S520_CONQTY %>
+            </td>
+            <td>
+                <%= table[i].ORQTY %>
+            </td>
+            <td>
+                <%= table[i].CON_QTY %>
+            </td>
+            <td>
+                <%= table[i].OR_DIFF %>
+            </td>
+            <td>
+                <%= table[i].CON_DIFF %>
+            </td>
+        </tr>
 
-        <td>
-            <%= i + 1 %>
-        </td> 
-        <td>
-            <%= table[i].SALES_DOC %>
-        </td>
-        <td>
-            <%= table[i].MATERIAL %>
-        </td>
-        <td>
-            <%= table[i].S520_ORQTY %>
-        </td>
-        <td>
-            <%= table[i].S520_CONQTY %>
-        </td>
-        <td>
-            <%= table[i].ORQTY %>
-        </td>
-        <td>
-            <%= table[i].CON_QTY %>
-        </td>
-        <td>
-            <%= table[i].OR_DIFF %>
-        </td>
-        <td>
-            <%= table[i].CON_DIFF %>
-        </td>
-    </tr>
-
-<% } %> 
+        <% } %>
+    </tbody>
 </table>
 
 <% include ./partials/footer %>

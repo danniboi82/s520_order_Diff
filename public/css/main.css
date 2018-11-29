@@ -1,11 +1,7 @@
 
-@font-face {
-    font-family: 'nexen_tire';
-    src: url('/NEXEN_TIRE_Regular.ttf');
 
-}
-
-
-body{
-font: 'nexen_tire';
+header {
+    background-color: black;
+    padding-top: 20px;
+    border-bottom: 15px solid purple;
 }
