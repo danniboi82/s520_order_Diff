@@ -1,0 +1,47 @@
+<% include ./partials/header %>
+
+<table style="margin: 50px auto">
+    <tr>
+        <th>Sales_Doc</th>
+        <th>Material</th>
+        <th>S520_ORDER_QTY</th>
+        <th>S520_CONFIRM_QTY</th>
+        <th>OR_Order_Qty</th>
+        <th>OR_Confirm_Qty</th>
+        <th>Order_Diff</th>
+        <th>Confirm_Diff</th>
+
+    </tr>
+
+<% for(var i = 0; i < table.length; i++){ %>
+    <tr>
+        <td>
+            <%= table[i].SALES_DOC %>
+        </td>
+        <td>
+            <%= table[i].MATERIAL %>
+        </td>
+        <td>
+            <%= table[i].S520_ORQTY %>
+        </td>
+        <td>
+            <%= table[i].S520_CONQTY %>
+        </td>
+        <td>
+            <%= table[i].ORQTY %>
+        </td>
+        <td>
+            <%= table[i].CON_QTY %>
+        </td>
+        <td>
+            <%= table[i].OR_DIFF %>
+        </td>
+        <td>
+            <%= table[i].CON_DIFF %>
+        </td>
+    </tr>
+
+<% } %> 
+</table>
+
+<% include ./partials/footer %>

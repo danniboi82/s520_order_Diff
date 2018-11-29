@@ -28,23 +28,29 @@ app.get('/search', (req, res) => {
     console.log(monthEnd + "From get");
 
     let query = "EXEC upZDO_TEST1"
-    query = query + "'" + "admin" +"', "
+    query = query + "'" + "admin" + "', "
     query = query + "'" + "EXCEL" + "', "
     query = query + "'" + "LIST" + "', "
     query = query + "'" + monthStart + "', "
     query = query + "'" + monthEnd + "', "
     query = query + "'" + "" + "'"
-    
-    
-    db.sequelize.query(query).then(Diff => res.render('index', {Diff : Diff[0][1]}));
+
+
+    db.sequelize.query(query).then(Diff => {
+        let table = Diff[0];
+        console.log(table.length)
+        res.render('results', {
+            table: table
+        })
+    });
     // db.sequelize.query(query).then(Diff => res.json(Diff[1][0].SALES_DOC));
 
 });
 
 
 
-db.sequelize.sync().then(()=>
-app.listen(process.env.PORT || 3001, ()=> {
-    console.log("you are on port 3001")
-})
+db.sequelize.sync().then(() =>
+    app.listen(process.env.PORT || 3001, () => {
+        console.log("you are on port 3001")
+    })
 )
