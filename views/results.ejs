@@ -1,7 +1,8 @@
 <% include ./partials/header %>
-
+<h4> Return Results : <%= table.length %> </h4>
 <table style="margin: 50px auto">
     <tr>
+        <th>ID</th>
         <th>Sales_Doc</th>
         <th>Material</th>
         <th>S520_ORDER_QTY</th>
@@ -15,6 +16,10 @@
 
 <% for(var i = 0; i < table.length; i++){ %>
     <tr>
+
+        <td>
+            <%= i + 1 %>
+        </td> 
         <td>
             <%= table[i].SALES_DOC %>
         </td>
