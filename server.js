@@ -56,7 +56,7 @@ app.get('/search', (req, res) => {
     db.sequelize.query(query).then(Diff => {
         let table = Diff[0];
         console.log(table.length)
-        res.render('results', {
+        res.render('index', {
             table: table
         })
     });

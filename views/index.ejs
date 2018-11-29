@@ -1,10 +1,12 @@
 <% include ./partials/header %>
-
+<header>
+    <img src="/images/dealer_portal_header_img.jpg" alt="">
+</header>
 
 <h4 class='text-left'>Monthly Sales Difference :</h4>
 <form action="/search" class="inputSection py-2" method="GET">
-    <input type="text" name="monthStart" placeholder="YYYYMM">
-    <input type="text" name="monthEnd" placeholder="YYYYMM">
+    <input type="text" name="monthStart" placeholder="YYYYMM" >
+    <input type="text" name="monthEnd" placeholder="YYYYMM" >
     <button type="submit" id="searchButton">Search</button>
 </form>
 
@@ -15,5 +17,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script scr='/javascript/currentDate.js'></script> 
 
 <% include ./partials/footer %>
