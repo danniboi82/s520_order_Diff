@@ -14,3 +14,14 @@ th, td {
     border : 1px solid grey;
     background-color: white;
 }
+
+.table-wrapper{
+    background-color: purple;
+    border: 3px solid white;
+}
+
+
+.input-wrapper{
+    background-color : purple;
+    border: 3px solid white;
+}

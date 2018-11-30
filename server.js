@@ -4,6 +4,9 @@ let bodyParser = require('body-parser');
 let methodOverride = require('method-override');
 let db = require("./models");
 let currentDate = require('./public/javascript/currentDate');
+let paginate = require('express-paginate');
+
+app.use(paginate.middleware(10, 50));
 
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
@@ -27,11 +30,16 @@ query = query + "'" + monthStart + "', "
 query = query + "'" + monthEnd + "', "
 query = query + "'" + "" + "'"
 
-db.sequelize.query(query).then(Diff => {
+db.sequelize.query(query, {limit: req.query.limit, offset: req.skip}).then(Diff => {
     let table = Diff[0];
+    let itemCount = table.length;
+    let pageCount = Math.ceil(table.count / req.query.limit)
     console.log(table.length)
     res.render('index', {
-        table: table
+        table: table,
+        pageCount,
+        itemCount,
+        pages: paginate.getArrayPages(req)(3, pageCount, req.query.page)
     })
 });
 })
@@ -64,6 +72,9 @@ app.get('/search', (req, res) => {
 
 });
 
+app.get('/testing', (req, res)=>{
+    res.render('test');
+})
 
 
 db.sequelize.sync().then(() =>
