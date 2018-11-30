@@ -1,7 +1,16 @@
-
+body{
+    background-image : url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScHFR5FADbKHFbpAnvr-62hEf0eI5ymlCQrqCc6V-Lc9ZUcDQpRg');
+    background-size: 100% 100%;
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
 header {
     background-color: black;
     padding-top: 20px;
     border-bottom: 15px solid purple;
+}
+
+th, td { 
+    border : 1px solid grey;
+    background-color: white;
 }
